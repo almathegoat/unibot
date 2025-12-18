@@ -1,0 +1,153 @@
+/* Admin-specific small tweaks while fully respecting shared theme */
+
+/* Ensure sidebar matches student/teacher exactly */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+}
+
+/* Nav-link basic style follows existing rules in global/dashboard.css;
+   we add only badge alignment and small admin-specific niceties */
+.sidebar .nav-link {
+    padding: 12px 10px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Small badges in sidebar */
+.sidebar .badge {
+    min-width: 38px;
+    text-align: center;
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 4px 8px;
+}
+
+/* Page content background already in dashboard.css but keep fallback */
+.page-content {
+    background-color: #f5f7fa;
+}
+
+/* Cards — consistent with dashboard cards */
+.card .card-body i {
+    width: 46px;
+    text-align: center;
+}
+
+/* Quick actions styling */
+.card .btn i {
+    width: 18px;
+}
+
+/* Make sure table rows have the same hover & rounded feel */
+.table-hover tbody tr:hover {
+    background-color: #f8f9fb;
+}
+
+/* Footer styling */
+footer {
+    color: #6c757d;
+}
+
+/* Small responsive tweaks */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+}
+/* Sidebar (keeps student/admin theme consistency) */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+}
+
+.nav-link {
+    color: #ffffffcc;
+    transition: 0.2s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 6px;
+}
+
+/* Page background */
+.page-content {
+    background-color: #f5f7fa;
+}
+
+/* Chat styles */
+.chat-card {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-body {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    background: #f9fafc;
+}
+
+.message {
+    max-width: 70%;
+    margin-bottom: 20px;
+}
+
+.message-student .msg-text {
+    background: #e9ecef;
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+.message-admin {
+    margin-left: auto;
+    text-align: right;
+}
+
+.message-admin .msg-text {
+    background: #0d6efd;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 12px;
+}
+
+.msg-time {
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: 0.6;
+}
+
+/* Input bar */
+.card-footer input {
+    border-radius: 8px;
+}
+
+.card-footer button {
+    border-radius: 8px;
+}
+/* === Admin Users Page — safe add-ons === */
+
+.table td .btn {
+    border-radius: 6px;
+    padding: 4px 10px;
+}
+
+.card input[type="text"] {
+    border-radius: 8px;
+}
+/* === Admin Categories Page — safe minimal add-ons === */
+
+.table td .badge {
+    border-radius: 8px;
+    padding: 4px 10px;
+}
+
+.card input[type="text"] {
+    border-radius: 8px;
+}
