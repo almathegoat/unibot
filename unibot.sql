@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2025 at 11:37 PM
+-- Generation Time: Dec 19, 2025 at 12:20 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -43,7 +43,8 @@ INSERT INTO `categories` (`id`, `name`, `description`, `created_at`) VALUES
 (2, 'Technical Issue', 'Website, portal, login issues', '2025-12-07 10:12:28'),
 (3, 'Course Registration', 'Problems related to course selection', '2025-12-07 10:12:28'),
 (4, 'Payment & Fees', 'Billing, fees, and financial aid issues', '2025-12-07 10:12:28'),
-(5, 'Hostel & Accommodation', 'Campus room and housing issues', '2025-12-07 10:12:28');
+(5, 'Hostel & Accommodation', 'Campus room and housing issues', '2025-12-07 10:12:28'),
+(6, 'conception logiciel', 'software engineering course', '2025-12-19 09:41:06');
 
 -- --------------------------------------------------------
 
@@ -100,7 +101,7 @@ CREATE TABLE `faqs` (
 --
 
 INSERT INTO `faqs` (`id`, `question`, `answer`, `created_at`) VALUES
-(9, 'dcdcc', 'ddscd', '2025-12-18 22:17:31');
+(11, 'i don\'t have a score for exam , what is the procedure ?', 'kindly leave your request , in a ticket with proof of your attendance', '2025-12-19 09:42:47');
 
 -- --------------------------------------------------------
 
@@ -148,7 +149,7 @@ CREATE TABLE `settings` (
 --
 
 INSERT INTO `settings` (`id`, `system_name`, `support_email`, `timezone`, `default_language`, `confidence_threshold`, `auto_escalation`, `require_admin_2fa`, `session_timeout`, `maintenance_mode`) VALUES
-(1, 'Unibot', 'support@unibot.com', 'Africa/Nairobi', 'French', 0.6, 1, 1, 30, 0);
+(1, 'Unibot', 'support@unibot.com', 'Africa/Nairobi', 'English', 0.6, 1, 1, 30, 0);
 
 -- --------------------------------------------------------
 
@@ -177,7 +178,8 @@ CREATE TABLE `tickets` (
 INSERT INTO `tickets` (`id`, `student_id`, `student_name`, `subject`, `category`, `assigned_to`, `status`, `created_at`, `category_id`, `description`, `attachment`) VALUES
 (1, 7, 'almadikoume ', 'dffdz', 'Administrative Documents', NULL, 'pending', '2025-12-18 19:28:25', NULL, NULL, NULL),
 (2, 9, 'dimi turner', 'i lost my diploma', 'Administrative Documents', NULL, 'pending', '2025-12-18 21:09:33', NULL, NULL, NULL),
-(3, 9, 'dimi turner', 'hhfbg', 'Library / Resources', NULL, 'pending', '2025-12-18 21:17:50', NULL, 'fbgh', '1766092670_diagramme de sequence.png');
+(3, 9, 'dimi turner', 'hhfbg', 'Library / Resources', NULL, 'pending', '2025-12-18 21:17:50', NULL, 'fbgh', '1766092670_diagramme de sequence.png'),
+(4, 9, 'dimi turner', 'i dont have a score for exam', 'Exam Results / Grades', NULL, 'pending', '2025-12-19 09:38:18', NULL, 'i was present during exams but i have no score for it', '1766137098_prolog.png');
 
 -- --------------------------------------------------------
 
@@ -202,7 +204,9 @@ INSERT INTO `ticket_messages` (`id`, `ticket_id`, `sender`, `message`, `created_
 (2, 2, 'admin', 'hi', '2025-12-18 21:10:18'),
 (3, 3, 'admin', 'hi', '2025-12-18 21:40:25'),
 (4, 3, 'admin', 'hi', '2025-12-18 21:55:15'),
-(5, 3, 'student', 'hi', '2025-12-18 22:00:44');
+(5, 3, 'student', 'hi', '2025-12-18 22:00:44'),
+(6, 4, 'student', 'pleasei need help', '2025-12-19 09:38:43'),
+(7, 4, 'admin', 'how can i help ?', '2025-12-19 09:39:36');
 
 -- --------------------------------------------------------
 
@@ -227,7 +231,6 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `email`, `password`, `role`, `created_at`, `status`) VALUES
 (4, 'Admin', 'User', 'admin@example.com', '$2y$10$DnUdSVNeFW0wDXyvZBhOeuaCihs/cGqqD4OQ6HA5bFEU5nSJROaqi', 'admin', '2025-12-06 18:00:57', 'active'),
-(5, 'ngambialma', '', 'ngambialma@gmail.com', '$2y$10$Un//VlonhmuXPypJTeX.nubsMrPHUErorx4cSOW5yWsIly2xl49JW', 'student', '2025-12-18 16:03:37', 'active'),
 (6, 'almadikoume', '', 'almadikoum@gmail.com', '$2y$10$GkesyKrCnjg70N5a68HZJO.zLBHP6XbwTBfmi8PAGbkgBynLC0A9y', 'student', '2025-12-18 16:08:27', 'active'),
 (7, 'almadikoume', '', 'almadikou@gmail.com', '$2y$10$O6KtDCgT6xnvuAjsU7QhzudODzhhMYNngYmkKSab3PQneujfvZ7je', 'student', '2025-12-18 16:20:30', 'active'),
 (8, NULL, NULL, 'admin@unibot.com', '$2y$10$UyKg4vKGlVbEE8O.qW2G7ua3BxN3VIaD6UMbdMF1/G3awZov8uOBm', 'admin', '2025-12-18 20:42:08', 'active'),
@@ -301,7 +304,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `chatbot_logs`
@@ -319,7 +322,7 @@ ALTER TABLE `chat_messages`
 -- AUTO_INCREMENT for table `faqs`
 --
 ALTER TABLE `faqs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `faq_questions`
@@ -331,19 +334,19 @@ ALTER TABLE `faq_questions`
 -- AUTO_INCREMENT for table `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `ticket_messages`
 --
 ALTER TABLE `ticket_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Constraints for dumped tables

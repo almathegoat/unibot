@@ -58,9 +58,13 @@ Troubleshooting
   - Ensure Apache is running in XAMPP.
   - Check that the project folder is correctly placed in `htdocs`.
 
-Contact
--------
-For any issues, contact [Your Name] at [Your Email] (optional).
+
+Identifiants de connexion pour test
+1. Administrateur
+
+Email :admin@example.com
+
+Mot de passe : Admin1234
 
 ---
 
